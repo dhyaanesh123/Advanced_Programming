@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="605.0" prefWidth="666.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.resource_booking.StudentController">
+    <children>
+        <VBox layoutX="20.0" layoutY="20.0" prefHeight="565.0" prefWidth="626.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <children>
+
+                <!-- Search Bar (Top of Student View) -->
+                <TextField fx:id="searchField" prefHeight="35.0" promptText="Search resources..." styleClass="search-bar" />
+
+                <!-- Dark List Container -->
+                <VBox styleClass="resource-list-bg" VBox.vgrow="ALWAYS" spacing="10.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <Label styleClass="list-header" text="AVAILABLE RESOURCES" />
+                        </HBox>
+
+                        <!-- Scrollable Area for Resources -->
+                        <ScrollPane fitToWidth="true" style="-fx-background: #0A0A0A; -fx-border-color: #0A0A0A;" VBox.vgrow="ALWAYS">
+                            <content>
+                                <!-- Target VBox for Backend Data Injection (Part B) -->
+                                <VBox fx:id="resourceListContainer" spacing="5.0" style="-fx-background-color: #0A0A0A;">
+                                    <children>
+
+                                        <!-- DUMMY ITEM 1: Available -->
+                                        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="resource-item">
+                                            <VBox alignment="CENTER" prefHeight="45.0" prefWidth="45.0" styleClass="resource-icon-box">
+                                                <Label text="👥" textFill="WHITE"><font><Font size="20.0" /></font></Label>
+                                            </VBox>
+                                            <VBox HBox.hgrow="ALWAYS" spacing="3.0">
+                                                <Label styleClass="resource-title" text="Discussion Room 1.0" />
+                                                <Label styleClass="resource-location" text="Library Building - Floor 1, Room 1.0" />
+                                            </VBox>
+                                            <Label styleClass="status-available" text="• Available &gt;" />
+                                        </HBox>
+
+                                        <!-- DUMMY ITEM 2: Booked -->
+                                        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="resource-item">
+                                            <VBox alignment="CENTER" prefHeight="45.0" prefWidth="45.0" styleClass="resource-icon-box">
+                                                <Label text="👥" textFill="WHITE"><font><Font size="20.0" /></font></Label>
+                                            </VBox>
+                                            <VBox HBox.hgrow="ALWAYS" spacing="3.0">
+                                                <Label styleClass="resource-title" text="Discussion Room 2.0" />
+                                                <Label styleClass="resource-location" text="Library Building - Floor 2, Room 2.0" />
+                                            </VBox>
+                                            <Label styleClass="status-booked" text="• Booked &gt;" />
+                                        </HBox>
+
+                                        <!-- DUMMY ITEM 3: Available -->
+                                        <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="resource-item">
+                                            <VBox alignment="CENTER" prefHeight="45.0" prefWidth="45.0" styleClass="resource-icon-box">
+                                                <Label text="📖" textFill="WHITE"><font><Font size="20.0" /></font></Label>
+                                            </VBox>
+                                            <VBox HBox.hgrow="ALWAYS" spacing="3.0">
+                                                <Label styleClass="resource-title" text="Study Pod 1" />
+                                                <Label styleClass="resource-location" text="Library Building - Floor 3, Zone A" />
+                                            </VBox>
+                                            <Label styleClass="status-available" text="• Available &gt;" />
+                                        </HBox>
+
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

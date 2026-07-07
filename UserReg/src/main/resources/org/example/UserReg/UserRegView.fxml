@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.UserReg.UserRegController">
+    <left>
+        <VBox prefWidth="180" spacing="15" style="-fx-background-color: white;">
+            <padding><Insets bottom="10" left="10" right="10" top="20" /></padding>
+            <Label text="ADMIN" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+            <Label fx:id="homeLabel" text="Home" />
+            <Label fx:id="resourcesLabel" text="Resource" />
+            <Label fx:id="userRegLabel" text="User Registration" />
+            <Region VBox.vgrow="ALWAYS" />
+            <Separator />
+            <Label fx:id="profileLabel" text="👤 ADMIN" />
+            <Label fx:id="logoutLabel" text="Logout" />
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane>
+            <BorderPane fx:id="listPage">
+                <padding><Insets bottom="15" left="15" right="15" top="15" /></padding>
+                <top>
+                    <VBox spacing="5">
+                        <Label text="USER REGISTRATION" style="-fx-font-size: 28px; -fx-font-weight: bold;" />
+                        <Label text="Manage registered student database" style="-fx-text-fill: #7f8c8d;" />
+                        <HBox alignment="CENTER_LEFT" style="-fx-padding: 10 0 10 0;">
+                            <Label fx:id="studentCountLabel" style="-fx-font-weight: bold;" text="0 registered students" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Button onAction="#onAddStudentClicked" style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-background-radius: 5;" text="＋ Add Student" />
+                        </HBox>
+                    </VBox>
+                </top>
+                <center>
+                    <TableView fx:id="userTable">
+                        <columns>
+                            <TableColumn fx:id="nameColumn" prefWidth="180.0" text="NAME" />
+                            <TableColumn fx:id="idColumn" prefWidth="130.0" text="STUDENT ID" />
+                            <TableColumn fx:id="programmeColumn" prefWidth="220.0" text="PROGRAMME" />
+                            <TableColumn fx:id="bookingsColumn" prefWidth="110.0" text="BOOKINGS" />
+                            <TableColumn fx:id="statusColumn" prefWidth="110.0" text="STATUS" />
+                        </columns>
+                    </TableView>
+                </center>
+            </BorderPane>
+
+            <BorderPane fx:id="registerPage" managed="false" visible="false">
+                <padding><Insets bottom="15" left="15" right="15" top="15" /></padding>
+                <top>
+                    <VBox>
+                        <Label text="USER REGISTRATION" style="-fx-font-size: 28px; -fx-font-weight: bold;" />
+                        <Button onAction="#onReturnClicked" style="-fx-background-color: transparent; -fx-text-fill: #3498db; -fx-cursor: hand; -fx-padding: 10 0 10 0;" text="⟨ Return to user registration page" />
+                    </VBox>
+                </top>
+                <center>
+                    <VBox alignment="CENTER" maxWidth="720.0" spacing="20.0" style="-fx-background-color: #eeeeee; -fx-background-radius: 8;">
+                        <padding><Insets bottom="30" left="30" right="30" top="30" /></padding>
+                        <GridPane hgap="24.0" vgap="16.0">
+                            <children>
+                                <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <Label text="STUDENT FULL NAME" style="-fx-font-size: 11px; -fx-text-fill: #555555; -fx-font-weight: bold;" />
+                                    <TextField fx:id="fullNameField" promptText="e.g. John Doe" style="-fx-padding: 8;" />
+                                </VBox>
+                                <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <Label text="STUDENT ID (7 DIGITS, STARTS WITH 0)" style="-fx-font-size: 11px; -fx-text-fill: #555555; -fx-font-weight: bold;" />
+                                    <TextField fx:id="studentIdField" promptText="e.g. 0123456" style="-fx-padding: 8;" />
+                                </VBox>
+                                <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <Label text="DEGREE PROGRAMME" style="-fx-font-size: 11px; -fx-text-fill: #555555; -fx-font-weight: bold;" />
+                                    <TextField fx:id="programmeField" promptText="e.g. Software Engineering" style="-fx-padding: 8;" />
+                                </VBox>
+                                <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <Label text="EMAIL ADDRESS" style="-fx-font-size: 11px; -fx-text-fill: #555555; -fx-font-weight: bold;" />
+                                    <TextField fx:id="emailField" promptText="e.g. student@campus.edu" style="-fx-padding: 8;" />
+                                </VBox>
+                            </children>
+                        </GridPane>
+                        <Label fx:id="messageLabel" style="-fx-font-size: 13px;" wrapText="true" />
+                        <Button onAction="#onRegisterClicked" prefWidth="300.0" style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10 0 10 0; -fx-background-radius: 5px; -fx-cursor: hand;" text="Register" />
+                    </VBox>
+                </center>
+            </BorderPane>
+        </StackPane>
+    </center>
+</BorderPane>

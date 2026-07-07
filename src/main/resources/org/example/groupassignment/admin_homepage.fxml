@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.groupassignment.AdminHomeController" prefWidth="950.0" prefHeight="600.0">
+    <left>
+        <VBox prefHeight="625.0" prefWidth="180" spacing="15" style="-fx-background-color:white;">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="20" />
+            </padding>
+            <children>
+                <ImageView fitHeight="80" fitWidth="80" preserveRatio="true" />
+                <Label text="ADMIN">
+                    <font>
+                        <Font name="System Bold" size="20" />
+                    </font>
+                </Label>
+                <Label fx:id="homeLabel" text="Home" />
+                <Label fx:id="resourcesLabel" text="Resource" />
+                <Label fx:id="userRegLabel" text="User Registration" />
+                <Region VBox.vgrow="ALWAYS" />
+                <Separator />
+                <Label fx:id="profileLabel" text="👤 ADMIN" />
+                <Label fx:id="logoutLabel" text="Logout" />
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="15" left="15" right="15" bottom="15"/>
+            </padding>
+            <children>
+                <Label text="HOME">
+                    <font>
+                        <Font name="System Bold" size="28"/>
+                    </font>
+                </Label>
+                <Label text="Admin Overview"/>
+                <Label fx:id="dateLabel" text="Loading..."/>
+                <HBox spacing="20">
+                    <children>
+                        <VBox prefWidth="350" prefHeight="380" style="-fx-background-color:black;-fx-background-radius:8;-fx-padding:15;">
+                            <children>
+                                <Label text="CALENDAR" style="-fx-text-fill:white;-fx-font-size:18;-fx-font-weight:bold;-fx-padding:0 0 10 0;"/>
+                                <GridPane fx:id="calendarGrid" hgap="5" vgap="5" prefWidth="310" prefHeight="290"/>
+                            </children>
+                        </VBox>
+                        <VBox prefWidth="420" prefHeight="380" style="-fx-background-color:black;-fx-background-radius:8;-fx-padding:15;">
+                            <children>
+                                <Label text="BLOCKED RESOURCES" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18"/>
+                                    </font>
+                                </Label>
+                                <VBox fx:id="blockedResourcesBox" spacing="10" prefHeight="290" prefWidth="390"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

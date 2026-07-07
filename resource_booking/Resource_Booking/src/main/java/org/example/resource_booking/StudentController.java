@@ -51,6 +51,35 @@ public class StudentController {
         }
     }
 
+    @FXML
+    void onHomeClicked(MouseEvent event) {
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("Home Page(Student).fxml"));
+            contentArea.getChildren().removeAll();
+            contentArea.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error: Could not load Home Page(Admin).fxml. Check the file path!");
+        }
+    }
+
+    @FXML
+    void onBookingClicked(MouseEvent event){
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("Booking Page(Student).fxml"));
+            contentArea.getChildren().removeAll();
+            contentArea.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error: Could not load Home Page(Admin).fxml. Check the file path!");
+        }
+    }
+
+    @FXML
+    private void onLogOut() {
+        System.exit(0);
+    }
+
     // During the Part B backend implementation, you will add a method here to
     // parse the CSV and inject the "Available" and "Booked" rooms dynamically
     // into the resourceListContainer.

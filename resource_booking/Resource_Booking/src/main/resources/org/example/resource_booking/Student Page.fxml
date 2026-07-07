@@ -21,7 +21,7 @@
             </FlowPane>
             <FlowPane alignment="CENTER" prefHeight="53.0" prefWidth="208.0">
                <children>
-                  <Label fx:id="home" styleClass="menu-label" text="Home">
+                  <Label fx:id="home" onMouseClicked="#onHomeClicked" styleClass="menu-label" text="Home">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -30,7 +30,7 @@
             </FlowPane>
             <FlowPane alignment="CENTER" prefHeight="53.0" prefWidth="208.0">
                <children>
-                  <Label fx:id="booking" styleClass="menu-label" text="Booking">
+                  <Label fx:id="booking" onMouseClicked="#onBookingClicked" styleClass="menu-label" text="Booking">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -48,10 +48,10 @@
             </FlowPane>
             <FlowPane alignment="BOTTOM_LEFT" prefHeight="352.0" prefWidth="208.0" rowValignment="BOTTOM">
                <children>
-                  <Label fx:id="profileLabel" text="👤 STUDENT" />
+                  <Label fx:id="profileLabel" styleClass="menu-label" text="👤 STUDENT" />
                </children>
             </FlowPane>
-            <Label text=" Logout">
+            <Label fx:id="logout" onMouseClicked="#onLogOut" styleClass="menu-label" text=" Logout">
                <font>
                   <Font size="13.0" />
                </font>

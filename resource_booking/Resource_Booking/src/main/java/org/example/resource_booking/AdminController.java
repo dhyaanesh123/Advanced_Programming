@@ -64,6 +64,18 @@ public class AdminController {
             System.out.println("Error: Could not load Home Page(Admin).fxml. Check the file path!");
         }
     }
+    @FXML
+    void onRegistrationClicked(MouseEvent event){
+        try{
+            Parent fxml = FXMLLoader.load(getClass().getResource("User Registration(Admin).fxml"));
+            contentArea.getChildren().removeAll();
+            contentArea.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error: Could not load Home Page(Admin).fxml. Check the file path!");
+        }
+
+    }
 
     // In Part B of your project, you will create a method here (like 'loadResources()')
     // to read from your text files, generate new HBox items via code, and add them

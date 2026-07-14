@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:controller="org.example.resource_booking.LoginController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="400.0" styleClass="root" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="400.0" spacing="20.0" styleClass="loginCard">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="btnStudent" mnemonicParsing="false" onAction="#handleStudentTab" prefHeight="50.0" prefWidth="150.0" text="Student">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btnAdmin" mnemonicParsing="false" onAction="#handleAdminTab" prefHeight="50.0" prefWidth="150.0" text="Admin">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+                <VBox alignment="CENTER" fillWidth="false" prefHeight="300.0" prefWidth="400.0">
+                    <children>
+                        <Label fx:id="lbID" alignment="CENTER" text="Student ID">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets right="215.0" />
+                            </VBox.margin>
+                        </Label>
+                        <TextField fx:id="tfID" prefHeight="40.0" prefWidth="300.0" promptText="Student ID" />
+                        <Label fx:id="lbPassword" text="Password">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets right="225.0" top="20.0" />
+                            </VBox.margin>
+                        </Label>
+                        <PasswordField fx:id="tfPassword" prefHeight="40.0" prefWidth="300.0" promptText="Password" />
+                        <Label fx:id="lbError" text="ID or Password is invalid !" visible="false">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#handleLogin" prefHeight="50.0" prefWidth="150.0" text="Login">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </Button>
+                        <Hyperlink fx:id="forgotPasswordLink" onAction="#handleForgotPassword" text="Forgot Password?">
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                        </Hyperlink>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</StackPane>

@@ -1,0 +1,72 @@
+/* This targets any element we give the "menu-label" class to */
+.menu-label {
+    -fx-cursor: hand; /* Changes the mouse to a pointing hand */
+    -fx-padding: 5 10 5 10; /* Adds a little breathing room inside the label */
+    -fx-background-radius: 5; /* Optional: slightly rounds the corners of the highlight */
+}
+
+/* This triggers only when the mouse hovers over the element */
+.menu-label:hover {
+    -fx-background-color: #d3d3d3; /* A nice light gray highlight */
+}
+
+/* --- Resource Page Specific Styles --- */
+.page-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 900;
+    -fx-font-family: "System";
+    -fx-text-fill:white;
+}
+
+.page-subtitle {
+    -fx-text-fill: #888888;
+    -fx-font-size: 14px;
+}
+
+.search-bar {
+    -fx-background-color: #E8E8E8;
+    -fx-background-radius: 20;
+    -fx-padding: 8 15 8 15;
+    -fx-font-size: 13px;
+    -fx-prompt-text-fill: #999999;
+}
+
+.resource-list-bg {
+    -fx-background-color: #0A0A0A;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+}
+
+.list-header {
+    -fx-text-fill: #666666;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+
+.resource-item {
+    -fx-background-color: #111111;
+    -fx-padding: 15;
+    -fx-border-color: #222222;
+    -fx-border-width: 0 0 1 0;
+}
+
+.resource-icon-box {
+    -fx-background-color: #333333;
+    -fx-background-radius: 5;
+}
+
+.resource-title {
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.resource-location {
+    -fx-text-fill: #777777;
+    -fx-font-size: 12px;
+}
+
+.status-available { -fx-text-fill: #00FF00; -fx-font-weight: bold; }
+.status-booked { -fx-text-fill: #FFA500; -fx-font-weight: bold; }
+.status-blocked { -fx-text-fill: #FF0000; -fx-font-weight: bold; }
